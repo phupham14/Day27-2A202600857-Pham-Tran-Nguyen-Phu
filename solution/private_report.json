@@ -1,0 +1,10 @@
+ {
+  "result": {
+    "phase": "private",
+    "score": 31.28,
+    "tpr": 0.6667,
+    "fpr": 0.0685,
+    "cost_overage": 0.0
+  },
+  "signature": "6da4615e911b0977b4b28205ea4e530421e646b55047093275ab1050a6663431"
+}
