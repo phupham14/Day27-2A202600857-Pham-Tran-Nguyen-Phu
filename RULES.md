@@ -18,7 +18,10 @@ caching/memoizing within a run, whatever detection strategy you want.
 - Reading `phases/*.key`, `phases/*_schedule.json.enc`, or any harness file
   other than through the documented `ctx.tools`/`ctx.baseline` interface —
   including trying to import anything beyond `api.py`, decrypt a schedule
-  yourself, or otherwise reach past the sandboxed process you run in.
+  yourself, or otherwise reach past the sandboxed process you run in. This is
+  enforced technically, not just by policy: `defense.py` runs with no file
+  I/O (`open()` and friends always raise) and an import allowlist covering
+  only `api` and a small safe stdlib subset — see `docs/TOOLKIT_API.md`.
 - Calling an RPC method by name that isn't in `docs/TOOLKIT_API.md`'s table
   (the harness rejects these, but attempting it is still a violation).
 - Hardcoding answers keyed to a specific run/seed rather than general detection
